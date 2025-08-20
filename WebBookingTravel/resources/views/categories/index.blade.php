@@ -16,7 +16,7 @@
 </style>
 
 <div class="cat-header">
-    <h2 style="margin:0">Danh sách danh mục</h2> <br>
+    <h2 style="margin:0">Danh sách danh mục Tour</h2> <br>
     <div class="cat-toolbar">
         <span class="badge">{{ $categories->count() }} danh mục</span>
         <input type="text" id="cat-search" class="search" placeholder="Tìm danh mục..." aria-label="Tìm danh mục theo tên">
