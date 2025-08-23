@@ -23,8 +23,20 @@ class CategoryController extends Controller
     // Lưu category mới
     public function store(Request $request)
     {
-        $request->validate(['name' => 'required']);
-        Category::create($request->all());
+        $data = $request->all();
+        if ($request->has('name')) {
+            $data['categoryName'] = $request->input('name');
+        }
+        $validated = $request->validate([
+            'name' => 'nullable|string|max:100',
+            'categoryName' => 'required_without:name|string|max:100',
+            'description' => 'nullable|string',
+        ]);
+        $payload = [
+            'categoryName' => $data['categoryName'] ?? $data['name'],
+            'description' => $data['description'] ?? null,
+        ];
+        Category::create($payload);
         return redirect()->route('categories.index')->with('success', 'Category đã được thêm');
     }
 
@@ -37,8 +49,20 @@ class CategoryController extends Controller
     // Cập nhật category
     public function update(Request $request, Category $category)
     {
-        $request->validate(['name' => 'required']);
-        $category->update($request->all());
+        $data = $request->all();
+        if ($request->has('name')) {
+            $data['categoryName'] = $request->input('name');
+        }
+        $validated = $request->validate([
+            'name' => 'nullable|string|max:100',
+            'categoryName' => 'required_without:name|string|max:100',
+            'description' => 'nullable|string',
+        ]);
+        $payload = [
+            'categoryName' => $data['categoryName'] ?? $data['name'],
+            'description' => $data['description'] ?? null,
+        ];
+        $category->update($payload);
         return redirect()->route('categories.index')->with('success', 'Category đã được cập nhật');
     }
 
