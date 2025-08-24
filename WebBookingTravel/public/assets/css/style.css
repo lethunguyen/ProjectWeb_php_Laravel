@@ -224,13 +224,17 @@ input[type=checkbox], input[type=radio] {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  min-width: 300px; }
+  min-width: 300px; 
+  padding: 0 !important;
+}
 
 @media only screen and (min-width: 1200px) {
   .container {
     max-width: 1320px;
     padding-left: 15px;
     padding-right: 15px; }
+    .container.container-900 {
+      max-width: 830px; }
     .container.container-1400 {
       max-width: 1430px; }
     .container.container-1500 {
@@ -238,13 +242,13 @@ input[type=checkbox], input[type=radio] {
 
 @media only screen and (min-width: 576px) {
   .container-fluid {
-    padding-left: 25px;
-    padding-right: 25px; } }
+    padding-left: 0;
+    padding-right: 0; } }
 
 @media only screen and (min-width: 1600px) {
   .container-fluid {
-    padding-left: 70px;
-    padding-right: 70px; } }
+    padding-left: 0;
+    padding-right: 0; } }
 
 .row {
   --bs-gutter-x: 30px; }
@@ -416,7 +420,7 @@ a.theme-btn {
   font-weight: 600;
   overflow: hidden;
   text-align: center;
-  padding: 11px 36px;
+  padding: 9px 22px;
   border-radius: 30px;
   position: relative;
   -webkit-box-align: center;
@@ -454,7 +458,9 @@ a.theme-btn {
     -webkit-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
-    margin-left: 10px; }
+    margin-left: 5px;
+  margin-top: 5px;
+font-weight: 500; }
   .theme-btn.style-two i,
   a.theme-btn.style-two i {
     -webkit-transform: rotate(-45deg);
@@ -3258,6 +3264,7 @@ h6, .h6, blockquote {
     -o-transition: all 500ms ease;
     transition: all 500ms ease; }
   .main-header .logo-outer {
+    margin-left: 20px;
     -webkit-box-flex: 0;
     -ms-flex: none;
     flex: none; }
@@ -3285,7 +3292,9 @@ h6, .h6, blockquote {
 
 @media only screen and (max-width: 991px) {
   .nav-outer {
-    width: 100%; } }
+    width: 100%; 
+    
+  } }
 
 /** Header Main Menu **/
 @media only screen and (max-width: 991px) {
@@ -3497,7 +3506,7 @@ h6, .h6, blockquote {
       transition: 0.5s;
       border-radius: 30px; }
       .main-header.header-one .main-menu .navbar-collapse .navigation > li > a {
-        padding: 15px 30px; } }
+        padding: 0px 30px; } }
       @media only screen and (min-width: 992px) and (min-width: 992px) and (max-width: 1299px) {
         .main-header.header-one .main-menu .navbar-collapse .navigation > li > a {
           padding: 10px 20px; } }
@@ -3517,10 +3526,10 @@ h6, .h6, blockquote {
 
 @media only screen and (min-width: 992px) {
       .main-header.header-one .main-menu .navbar-collapse .navigation > li:hover {
-        background: var(--primary-color); }
+         }
         .main-header.header-one .main-menu .navbar-collapse .navigation > li:hover > a,
         .main-header.header-one .main-menu .navbar-collapse .navigation > li:hover > .dropdown-btn {
-          color: white; }
+          color: var(--secondary-color); }
   .main-header.header-one.fixed-header .header-upper {
     padding-top: 10px;
     padding-bottom: 10px; } }
@@ -3530,14 +3539,14 @@ h6, .h6, blockquote {
   .main-header.header-two {
     display: none; } }
 
-.main-header.header-two .header-upper {
+.main-header.header-one .header-upper {
   background: white;
-  -webkit-box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, 0.1);
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(86, 92, 221, 0.1);
   box-shadow: 0px 0px 30px 0px rgba(87, 95, 245, 0.1); }
 
-.main-header.header-two .menu-sidebar > button {
+.main-header.header-one .menu-sidebar > button {
   border-color: var(--heading-color); }
-  .main-header.header-two .menu-sidebar > button .icon-bar {
+  .main-header.header-one .menu-sidebar > button .icon-bar {
     background: var(--heading-color); }
 
 @media only screen and (min-width: 992px) {
@@ -3658,7 +3667,8 @@ h6, .h6, blockquote {
         color: var(--heading-color);
         background-color: var(--secondary-color); }
   .menu-btns .theme-btn {
-    margin-right: 10px; }
+    margin-right: 0px; 
+    height: 2.64rem;}
     @media only screen and (max-width: 1199px) {
       .menu-btns .theme-btn {
         display: none; } }
@@ -3666,13 +3676,18 @@ h6, .h6, blockquote {
 /* Header Search */
 .nav-search {
   position: relative;
-  margin-right: 10px; }
+  margin-right: 10px; 
+      background: #c5c3c3;
+    color: #fff;  border-radius: 50px;
+}
+  
   @media only screen and (max-width: 375px) {
     .nav-search {
       display: none; } }
   .nav-search > button {
-    width: 50px;
-    height: 50px;
+    color: #1C231F;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.1); }
@@ -3751,7 +3766,9 @@ h6, .h6, blockquote {
 @media only screen and (min-width: 992px) {
   .main-header.white-menu .navbar-collapse > ul > li > a,
   .main-header.white-menu .navbar-collapse > ul > li > .dropdown-btn {
-    color: white; } }
+    color: #444;
+    font-weight: 700;
+  } }
 
 .main-header.white-menu .main-menu .navbar-header .navbar-toggle .icon-bar {
   background: white; }
@@ -3768,10 +3785,10 @@ h6, .h6, blockquote {
     background: white; }
 
 .main-header.white-menu.fixed-header .header-upper {
-  background: #222222; }
+  color: white; }
 
 .main-header.white-menu.header-one .main-menu .navbar-collapse {
-  background: #232C26;
+  background: #F9F9F7;
   border-color: rgba(255, 255, 255, 0.1); }
 
 /* Menu Sidebar */
@@ -4129,7 +4146,7 @@ h6, .h6, blockquote {
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
     align-self: center;
-    margin-bottom: 15px; }
+     }
     @media only screen and (min-width: 1200px) {
       .search-filter-inner .search-button {
         margin-left: auto; } }
@@ -8237,7 +8254,3 @@ blockquote {
   .footer-bottom-nav li {
     margin: 0 13px 5px; }
 
-.hero-slideshow {
-  border-radius: 12px; /* bạn chỉnh px theo ý, ví dụ 8px, 12px, 20px */
-  overflow: hidden;    /* rất quan trọng, để hình ảnh bên trong cũng bo tròn theo */
-}

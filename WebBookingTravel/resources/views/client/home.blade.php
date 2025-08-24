@@ -8,7 +8,7 @@
 @endpush
 @section('content')
 <!-- Hero Area Start -->
-<section class="hero-area bgc-black rpt-60 rel z-2">
+<section class="hero-area bgc-lighter rpt-60 rel z-2">
     <div class="container-fluid">
         @php // Fallback phòng trường hợp controller không truyền
         if(!isset($slides) || empty($slides)) {
@@ -43,38 +43,23 @@
             </div>
             @endif
         </div>
-        <div class="container container-1400">
+        <div class="container container-900">
             <div class="search-filter-inner" data-aos="zoom-out-down" data-aos-duration="700">
                 <div class="filter-item clearfix">
                     <div class="icon"><i class="fal fa-map-marker-alt"></i></div>
                     <span class="title">Điểm đến</span>
-                    <select name="city" id="city">
-                        <option value="value1">Bạn muốn đi đâu?</option>
-                        <option value="value2">Thành phố</option>
-                        <option value="value2">Khu vực</option>
-                    </select>
+                    <div name="city" id="city">
+                    </div>
                 </div>
                 <div class="filter-item clearfix">
                     <div class="icon"><i class="fal fa-flag"></i></div>
                     <span class="title">Khởi hành từ</span>
-                    <select name="activity" id="activity">
-                        <option value="value1">Vui lòng chọn</option>
-                        <option value="value2">Hàng ngày</option>
-                        <option value="value2">Hàng tháng</option>
-                    </select>
-                </div>
-                <div class="filter-item clearfix">
-                    <div class="icon"><i class="fal fa-users"></i></div>
-                    <span class="title">Số lượng thành viên</span>
-                    <select name="cuests" id="cuests">
-                        <option value="value1">0</option>
-                        <option value="value2">1</option>
-                        <option value="value2">2</option>
-                    </select>
+                    <div name="activity" id="activity">
+                    </div>
                 </div>
                 <div class="search-button">
                     <button class="theme-btn">
-                        <span data-hover="Search">Search</span>
+                        <span data-hover="Tìm kiếm">Tìm kiếm</span>
                         <i class="far fa-search"></i>
                     </button>
                 </div>
@@ -84,13 +69,16 @@
 <!-- Hero Area End -->
 
 <!-- Destinations Area start -->
-<section class="destinations-area bgc-black pt-100 pb-70 rel z-1">
+<section class="destinations-area bgc-lighter pt-50 pb-70 rel z-1">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-12">
-                <div class="section-title text-white text-center counter-text-wrap mb-70" data-aos="fade-up" data-aos-duration="700">
-                    <h2>Khám phá văn hóa Việt Nam cùng TripGo</h2>
-                    <p>Hơn <span class="count-text plus" data-speed="3000" data-stop="34500">0</span> trải nghiệm đáng nhớ đang chờ bạn</p>
+                <div class="section-title text-black text-center counter-text-wrap mb-70" data-aos="fade-up" data-aos-duration="700">
+                    <div class="title-inline">
+                        <h2>Khám phá du lịch Việt Nam cùng</h2>
+                        <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('assets/images/logos/logo.png') }}" alt="Logo"></a></div>
+                    </div>
+                    <p>Hơn <span class="count-text plus" data-speed="3000" data-stop="1200">0</span> trải nghiệm đáng nhớ đang chờ bạn</p>
                 </div>
             </div>
         </div>
@@ -329,6 +317,15 @@
 
 @push('styles')
 <style>
+    .search-filter-inner {
+        padding: 20px 24px;
+        border-radius: 22px;
+        background: #ffffffc9;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+
+
     /* Hero slideshow styles (enhanced) */
     .hero-slideshow {
         min-height: 420px;
@@ -336,6 +333,26 @@
 
     .hero-slideshow .slides-wrapper {
         position: relative;
+    }
+
+    /* Inline title + logo */
+    .section-title .title-inline {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: nowrap;
+    }
+
+    .section-title .title-inline h2 {
+        margin: 0;
+        white-space: nowrap;
+        display: inline-block;
+    }
+
+    .section-title .title-inline .logo img {
+        height: 64px;
+        width: auto;
+        display: block;
     }
 
     .hero-slideshow .hero-slide {
@@ -554,6 +571,7 @@
 
 @push('scripts')
 <script src="{{ asset('assets/js/slideshow.js') }}" defer></script>
+<script src="{{ asset('assets/js/tour-filter.js') }}" defer></script>
 @endpush
 
 @endsection

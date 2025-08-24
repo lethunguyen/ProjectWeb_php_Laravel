@@ -22,7 +22,7 @@
 	<div class="page-wrapper">
 		<!-- Navbar embedded -->
 		<header class="main-header header-one white-menu custom-header">
-			<div class="header-upper py-20 rpy-0">
+			<div style="padding: 5px 10px;" class="header-upper rpy-0">
 				<div class="container-fluid clearfix">
 					<div class="header-inner rel d-flex align-items-center">
 						<div class="logo-outer">
@@ -32,17 +32,15 @@
 							<nav class="main-menu navbar-expand-lg">
 								<div class="navbar-header">
 									<div class="mobile-logo"><a href="{{ route('home') }}"><img src="{{ asset('assets/images/logos/logo.png') }}" alt="Logo"></a></div>
-									<button type="button" class="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-										<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-									</button>
+									
 								</div>
 								<div class="navbar-collapse collapse clearfix">
 									<ul class="navigation clearfix">
-										<li class="{{ request()->routeIs('home') ? 'current' : '' }}"><a href="{{ route('home') }}">Trang chủ</a></li>
-										<li class="{{ request()->routeIs('home') ? 'current' : '' }}"><a href="{{ route('home') }}">Tour du lịch</a></li>
-										<li class="{{ request()->routeIs('client.booking') ? 'current' : '' }}"><a href="{{ route('client.booking') }}">Combo khuyến mại</a></li>
-										<li><a href="#about">Giới thiệu</a></li>
-										<li><a href="#contact">Liên hệ</a></li>
+										<li class="{{ request()->routeIs('home') ? 'current' : '' }}"><a href="{{ route('home') }}"><i class="fa fa-home" aria-hidden="true"></i> Trang chủ</a></li>
+										<li class="{{ request()->routeIs('home') ? 'current' : '' }}"><a href="{{ route('home') }}"><i class="fa fa-suitcase" aria-hidden="true"></i> Tour du lịch</a></li>
+										<li class="{{ request()->routeIs('client.booking') ? 'current' : '' }}"><a href="{{ route('client.booking') }}"><i class="fa fa-ticket" aria-hidden="true" style="display:inline-block;transform:rotate(-45deg);"></i> Combo khuyến mại</a></li>
+										<li><a href="#about"><i class="fa fa-info-circle" aria-hidden="true"></i> Giới thiệu</a></li>
+										<li><a href="#contact"><i class="fa fa-envelope" aria-hidden="true"></i> Liên hệ</a></li>
 
 									</ul>
 								</div>
@@ -64,8 +62,8 @@
 							<!-- menu sidbar -->
 							<div class="account-icon ms-2">
 								@php($loginUrl = Route::has('login') ? route('login') : '#')
-								<a href="{{ $loginUrl }}" class="d-inline-flex align-items-center justify-content-center" aria-label="Tài khoản" style="width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.45);color:#fff;text-decoration:none;">
-									<i class="far fa-user" style="font-size:20px;"></i>
+								<a href="{{ $loginUrl }}" class="d-inline-flex align-items-center justify-content-center" aria-label="Tài khoản" style="width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.45);color:#c5c3c3;text-decoration:none;">
+									<i class="far fa-user" style="color: #fff; font-size:18px;"></i>
 								</a>
 							</div>
 						</div>

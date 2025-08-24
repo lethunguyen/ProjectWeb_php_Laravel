@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tour extends Model
 {
+    // Actual table per provided schema is singular 'Tour'
     protected $table = 'Tour';
     protected $primaryKey = 'tourID';
     public $timestamps = false;
@@ -20,12 +21,22 @@ class Tour extends Model
         'availability',
         'startDate',
         'endDate',
+        'pickupPoint',
+        'departurePoint',
+        'destinationPoint',
     ];
 
     // Back-compat accessors used by existing blades
-    public function getNameAttribute() { return $this->title; }
-    public function getPriceAttribute() { return $this->priceAdult; }
-    public function getDaysAttribute() {
+    public function getNameAttribute()
+    {
+        return $this->title;
+    }
+    public function getPriceAttribute()
+    {
+        return $this->priceAdult;
+    }
+    public function getDaysAttribute()
+    {
         if ($this->startDate && $this->endDate) {
             return max(1, (new \DateTime($this->endDate))->diff(new \DateTime($this->startDate))->days + 1);
         }
